@@ -30,4 +30,12 @@ var _ = Resource("guest", func() {
 		})
 		Response(NoContent)
 	})
+	Action("OpenFile", func() {
+		Routing(GET("openfile/:guestID/:filePath"))
+		Params(func() {
+			Param("guestID", String, "The Guest ID")
+			Param("filePath", String, "The path to the file to be opened")
+		})
+		Response(NoContent)
+	})
 })
