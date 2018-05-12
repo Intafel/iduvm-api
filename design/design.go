@@ -38,4 +38,19 @@ var _ = Resource("guest", func() {
 		})
 		Response(NoContent)
 	})
+	Action("OpenURL", func() {
+		Routing(GET("openurl/:GuestID/:URL"))
+		Params(func() {
+			Param("GuestID", String, "The Guest ID")
+			Param("URL", String, "The URL to be opened")
+		})
+		Response(NoContent)
+	})
+	Action("OpenBrowser", func() {
+		Routing(GET("openbrowser/:GuestID"))
+		Params(func() {
+			Param("GuestID", String, "The Guest ID")
+		})
+		Response(NoContent)
+	})
 })
