@@ -21,6 +21,8 @@ var _ = Resource("guest", func() {
 			Param("guestID", String, "The Guest ID")
 		})
 		Response(NoContent)
+		Response(NotFound)
+		Response(InternalServerError)
 	})
 	Action("stop", func() {
 		Routing(GET("stop/:guestID"))
@@ -29,6 +31,8 @@ var _ = Resource("guest", func() {
 			Param("guestID", String, "The Guest ID")
 		})
 		Response(NoContent)
+		Response(NotFound)
+		Response(InternalServerError)
 	})
 	Action("OpenFile", func() {
 		Routing(GET("openfile/:guestID/:filePath"))
@@ -37,6 +41,8 @@ var _ = Resource("guest", func() {
 			Param("filePath", String, "The path to the file to be opened")
 		})
 		Response(NoContent)
+		Response(NotFound)
+		Response(InternalServerError)
 	})
 	Action("OpenURL", func() {
 		Routing(GET("openurl/:GuestID/:URL"))
@@ -45,6 +51,8 @@ var _ = Resource("guest", func() {
 			Param("URL", String, "The URL to be opened")
 		})
 		Response(NoContent)
+		Response(NotFound)
+		Response(InternalServerError)
 	})
 	Action("OpenBrowser", func() {
 		Routing(GET("openbrowser/:GuestID"))
@@ -52,5 +60,7 @@ var _ = Resource("guest", func() {
 			Param("GuestID", String, "The Guest ID")
 		})
 		Response(NoContent)
+		Response(NotFound)
+		Response(InternalServerError)
 	})
 })
