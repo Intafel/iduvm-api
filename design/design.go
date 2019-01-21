@@ -63,4 +63,14 @@ var _ = Resource("guest", func() {
 		Response(NotFound)
 		Response(InternalServerError)
 	})
+	Action("Restore", func() {
+		Routing(GET("restore/:GuestID"))
+		Params(func() {
+			Param("GuestID", String, "The Guest ID")
+		})
+		Response(NoContent)
+		Response(NotFound)
+		Response(InternalServerError)
+	})
+
 })
